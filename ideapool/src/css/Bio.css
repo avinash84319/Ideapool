@@ -1,0 +1,20 @@
+.bio{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.bio-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.bio-content{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}

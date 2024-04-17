@@ -1,0 +1,56 @@
+.sidebar-div{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.sidebar-heading-div{
+    display: flex;
+    align-items: flex-start;
+    margin:5px;
+    padding:5px;
+}
+
+.sidebar-heading{
+    font-size: 20px;
+}
+
+.sidebar-categories{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin:5px;
+    padding:5px;
+}
+
+.categori-heading{
+    font-size: 18px;
+}
+
+.categori-search{
+    margin:10px;
+}
+
+.categori-radio{
+    display: flex;
+}
+
+.categori-label{
+    padding: 5px;
+}
+
+.sidebar-sliders{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin:5px;
+    padding:5px;
+}
+
+.sliders-heading{
+    font-size: 18px;
+}

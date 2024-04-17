@@ -1,0 +1,33 @@
+.ideas-page{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 20px;
+}
+
+.ideas-page-list{
+    grid-column: 1/2;
+}
+
+.ideas-page-other{
+    border-left: 1px solid #ccc;
+    grid-column: 2/3;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ideas-page-other-header{
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.ideas-page-other-header-button{
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding:7px;
+    font-size: 20px;
+    border-radius: 10px 10px 0 0;
+}

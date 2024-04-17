@@ -1,0 +1,24 @@
+.profile{
+    display: grid;
+    grid-template-columns: 1fr 5fr 4fr;
+    grid-gap:5px;
+    margin: 10px;
+}
+
+.personal{
+    grid-column: 2/3;
+}
+
+.personal-bio{
+    grid-column: 2/3;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.personal-ideas{
+    grid-column: 2/3;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}

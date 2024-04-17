@@ -1,0 +1,138 @@
+.addpost-div{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.addpost{
+    padding:0px 10px;
+}
+
+.addpost-title{
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.addpost-media{
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.addpost-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.addpost-form-title{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.addpost-form-description{
+    resize: vertical;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.addpost-form-tags{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.addpost-form-tags-input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.addpost-form-tags-button{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.addpost-form-button{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.addpost-form-end-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.addpost-media-selection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.addpost-form-media{
+    display: none;
+}
+
+.addpost-form-media-label{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.addpost-form-tags-tag{
+    cursor:no-drop;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}

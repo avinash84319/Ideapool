@@ -1,0 +1,65 @@
+.singlechat{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    justify-content: flex-start;
+}
+
+.singlechat-user-img{
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.singlechat-user{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+    padding: 1px;
+}
+
+.singlechat-user-name{
+    font-size: 1.2rem;
+    font-weight:bold;
+    margin-left: 1px;
+    padding: 5px;
+}
+
+.singlechat-message-time{
+    padding: 5px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.singlechat-message{
+    display: flex;
+    font-size: 1rem;
+    margin:5px;
+    padding-left:25px;
+    justify-content: flex-start;
+}
+
+.singlechat-buttons{
+    display: flex;
+    justify-content: flex-start;
+    margin: 5px;
+    padding-left:25px;
+}
+
+.singlechat-message-comments{
+    display: flex;
+    justify-content: flex-start;
+    margin: 5px;
+    padding-left:40px;
+}
+
+.singlechat-input{
+    display: none;
+}
+
+.icon{
+    cursor: pointer;
+}
