@@ -4,35 +4,35 @@ function SingleChat(props) {
 
     const singlemessage = props.singlemessage;
 
-    if (singlemessage["message-comments"] == null) {
+    if (singlemessage["message_comments"] == null) {
         return <div></div>
     }
     else {
         return (
             <div className='singlechat'>
                 <div className='singlechat-user'>
-                    <img className='singlechat-user-img' src={singlemessage["user-img"]} alt='user-img'></img>
-                    <div className='singlechat-user-name'>{singlemessage["user"]}</div>
-                    <div className='singlechat-message-time'>{singlemessage["message-time"]}</div>
+                    <img className='singlechat-user_img' src={singlemessage["user_img"]} alt='user_img'></img>
+                    <div className='singlechat-user_name'>{singlemessage["user"]}</div>
+                    <div className='singlechat-message_time'>{singlemessage["message_time"]}</div>
                 </div>
                 <div className='singlechat-message'>{singlemessage["message"]}</div>
                 <div className='singlechat-buttons'>
-                    <span className="icon"><i class="fas fa-thumbs-up">👍</i>{singlemessage["message-likes"]}</span>
+                    <span className="icon"><i className="fas fa-thumbs-up">👍</i>{singlemessage["message_likes"]}</span>
                     <span className="icon" onClick={() => {
-                        if (document.getElementById('singlechat-input-' + singlemessage["message-id"]).style.display === "block") {
-                            document.getElementById('singlechat-input-' + singlemessage["message-id"]).style.display = "none"
+                        if (document.getElementById('singlechat-input-' + singlemessage["message_id"]).style.display === "block") {
+                            document.getElementById('singlechat-input-' + singlemessage["message_id"]).style.display = "none"
                         }
                         else {
-                            document.getElementById('singlechat-input-' + singlemessage["message-id"]).style.display = "block"
+                            document.getElementById('singlechat-input-' + singlemessage["message_id"]).style.display = "block"
                         }
-                    }}><i class="fas fa-comment">💬</i></span>
+                    }}><i className="fas fa-comment">💬</i></span>
                 </div>
-                <div className='singlechat-input' id={'singlechat-input-' + singlemessage["message-id"]}>
+                <div className='singlechat-input' id={'singlechat-input-' + singlemessage["message_id"]}>
                     <div className='message-type'><input type='text' className='message-type' placeholder='Add a comment'></input></div>
                 </div>
                 <div className='singlechat-message-comments'>
-                    {singlemessage["message-comments"].map((comment) => (
-                        <SingleChat key={comment["message-id"]} singlemessage={comment} />
+                    {singlemessage["message_comments"].map((comment) => (
+                        <SingleChat key={comment["message_id"]} singlemessage={comment} />
                     ))}
                 </div>
             </div>

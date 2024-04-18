@@ -13,6 +13,7 @@ function Home() {
     const [posts, setPosts] = React.useState([]);
 
     useEffect(() => {
+        console.log("getting posts")
         axios.get("http://localhost:5000/api/getposts")
             .then((response) => {
                 setPosts(response.data);

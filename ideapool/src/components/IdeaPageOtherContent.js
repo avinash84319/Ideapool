@@ -1,9 +1,13 @@
 import Addpost from './Addpost';
 import IdeaChats from './IdeaChats';
+import React,{useContext} from 'react';
+import { Filecontext } from '../contexts/filecontext';
 
 function IdeaPageOtherContent(props) {
 
     const tabselected = props.tabselected;
+
+    const {ideas,sindex} = useContext(Filecontext)
 
     if (tabselected === 0) return (
         <div className='ideas-page-other-content'>
@@ -30,7 +34,7 @@ function IdeaPageOtherContent(props) {
     );
 
     if (tabselected === 2) return (
-        <IdeaChats />
+        <IdeaChats selectedidea={ideas[sindex]}/>
     );
 }
 

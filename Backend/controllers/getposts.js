@@ -1,13 +1,20 @@
-const Post = require('../models/post')
+const pool=require("../database.js")
 
-const getpost = async (req, res) => {
+const getposts = async (req, res) => {
+    console.log("Getting Posts from the database")
 
-    try {
-        const posts = await Post.find()
-        res.json(posts)
-    } catch (error) {
-        res.status(500).json({ message: error.message })
+    try{
+    let [result] = await pool.query("select * from posts")
+
+    for(var i=0;i<result.length;i++){
+        result[i].idea_intrests=JSON.parse(result[i].idea_intrests)
     }
+    res.status(200).send(result)
+    }
+    catch(err){
+        res.status(500).send(err)
+    }
+
 }
 
-module.exports = {getpost}
+module.exports = {getposts};

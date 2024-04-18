@@ -1,31 +1,31 @@
-const User = require('../models/user');
+const pool = require("../database");
+
 
 const register = async (req, res) => {
 
-    const { username, password } = req.body;
+    const {username,password} = req.body;
 
-    try {
-        // check if the username already exists
-        const userExists = await User
-            .findOne({ username })
-            .exec();
+    // check if username is already present
 
-        if (userExists) {
-            return res.status(400).send('Username already exists');
-        }
-        else {
-            // create a new user
-            const newUser = new User({ username, password });
-            await newUser.save();
-            console.log('Registration successful');
-            // send a token
-            res.status(201).send({ "token":process.env.TOKEN });
-        }       
+    const [users] = await pool.query(`
+    select * from users
+    where username=?`,[username])
+
+    if(users.length>0){
+        res.status(400).send("user already exists")
     }
-    catch (err) {
-        console.log(err);
-        res.status(500).send('Registration failed');
-    }
+    else(
+        pool.query(`
+        insert into users values
+        (?,?)`,[username,password])
+        .then((result)=>{
+            res.send(result)
+        })
+        .catch((err)=>{
+            res.status(400).send(err)
+        })
+
+    )
 }
 
 module.exports = { register };

@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const pool = require("../database.js")
 
 const login = async(req,res)=>{
   
@@ -6,10 +6,8 @@ const login = async(req,res)=>{
 
     try {
         // check if the username exists
-        const user = await User
-            .findOne({ username
-            })
-            .exec();
+        const [[user]] = await pool.query(`select * from users where username=?`,[username]) //prepared query
+
 
         if (!user) {
             return res.status(400).send('User not found');
