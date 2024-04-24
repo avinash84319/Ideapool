@@ -6,6 +6,7 @@ import { Filecontext } from '../contexts/filecontext';
 function IdeaPageOtherContent(props) {
 
     const tabselected = props.tabselected;
+    const rerenderpost=props.rerenderpost;
 
     const {ideas,sindex} = useContext(Filecontext)
 
@@ -34,7 +35,7 @@ function IdeaPageOtherContent(props) {
     );
 
     if (tabselected === 2) return (
-        <IdeaChats selectedidea={ideas[sindex]}/>
+        <IdeaChats selectedidea={ideas[sindex]} rerenderpost={rerenderpost} sindex={sindex} />
     );
 }
 

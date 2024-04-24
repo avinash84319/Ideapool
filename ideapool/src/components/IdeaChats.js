@@ -6,6 +6,8 @@ import SingleChat from './SingleChat';
 
 function IdeaChats(props) {
     const idea = props.selectedidea;
+    const sindex=props.sindex;
+    const rerenderpost=props.rerenderpost;
 
     const [comment,setComment] = useState("")
 
@@ -13,6 +15,7 @@ function IdeaChats(props) {
 
         const submitMessage2=(singlemessage)=>{
 
+            rerenderpost(sindex)                    // when comment is added we call this function to reload posts and set post to view using index
 
         axios.post('http://localhost:5000/api/addrecmessage',{
             username:window.sessionStorage.getItem("username"),
@@ -38,6 +41,8 @@ function IdeaChats(props) {
     }
 
     const submitMessage=()=>{
+
+        rerenderpost(sindex)                     // when comment is added we call this function to reload posts and set post to view using index
 
         axios.post('http://localhost:5000/api/addmessage',{
             username:window.sessionStorage.getItem("username"),

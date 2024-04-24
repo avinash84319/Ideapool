@@ -32,6 +32,24 @@ function IdeasPage() {
 
     }, [])
 
+    const rerenderpost=(indexofpost)=>{                                 // when comment is added we call this function to reload posts and set post to view using index
+
+        console.log("rerendring posts")
+
+        axios.post("http://localhost:5000/api/getfavposts",{
+            "username":"avinash"
+        })
+            .then((response) => {
+                setIdeas(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+
+        setSindex(indexofpost)
+
+    }
+
     return (
         <div>
             <Navbar />
@@ -44,7 +62,7 @@ function IdeasPage() {
                             <div onClick={() => { setTabSelected(1) }} className='ideas-page-other-header-button'>Edit Idea</div>
                             <div onClick={() => { setTabSelected(2) }} className='ideas-page-other-header-button'>Idea Chats</div>
                         </div>
-                        <IdeaPageOtherContent tabselected={tabselected} />
+                        <IdeaPageOtherContent tabselected={tabselected} rerenderpost={rerenderpost}/>
                     </div>
                 </Filecontext.Provider>
             </div>
