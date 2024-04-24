@@ -8,10 +8,12 @@ const getposts = async (req, res) => {
 
     for(var i=0;i<result.length;i++){
         result[i].idea_intrests=JSON.parse(result[i].idea_intrests)
+        result[i].messages=JSON.parse(result[i].messages)
     }
     res.status(200).send(result)
     }
     catch(err){
+        console.log(err)
         res.status(500).send(err)
     }
 
