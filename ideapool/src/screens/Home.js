@@ -6,11 +6,15 @@ import Messages from "../components/Messages";
 import "../css/Home.css";
 import Addpost from "../components/Addpost";
 import axios from "axios";
+const io = require('socket.io-client');
+const ENDPOINT = 'http://localhost:5000';
+let socket = io(ENDPOINT);
 
 function Home() {
 
-
     const [posts, setPosts] = React.useState([]);
+    const [name, setName] = React.useState('');
+    const [room, setRoom] = React.useState('');
 
     useEffect(() => {
         console.log("getting posts")
@@ -22,6 +26,23 @@ function Home() {
                 console.log(error);
             })
     }, [])
+
+    useEffect(() => {
+        const name = window.sessionStorage.getItem('username');
+        const room = "1234"
+
+        setRoom(room);
+        setName(name);
+
+        console.log(name, room);
+
+        socket.emit('join', { name, room }, (error) => {
+        if(error) { 
+            console.log(error);
+        }
+        });
+
+    }, []); 
 
     return (
         <div>
@@ -35,7 +56,7 @@ function Home() {
                     <PostList posts={posts} />
                 </div>
                 <div className="home-message">
-                    <Messages />
+                    <Messages socket={socket} room={room} name={name}/>
                 </div>
             </div>
 

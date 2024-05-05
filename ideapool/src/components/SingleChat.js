@@ -7,7 +7,7 @@ function SingleChat(props) {
     const  setComment2=props.setComment2;
     const submitMessage2=props.submitMessage2;
 
-    if (singlemessage["message_comments"] === null || singlemessage["message_comments"]==="[]" || singlemessage["message_comments"]==undefined) {
+    if (singlemessage["message_comments"] === null || singlemessage["message_comments"]==="[]" || singlemessage["message_comments"]===undefined) {
         return <div className='singlechat'>
         <div className='singlechat-user'>
             <img className='singlechat-user_img' src={singlemessage["user_img"]} alt='user_img'></img>

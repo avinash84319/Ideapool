@@ -17,7 +17,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/ideas" element={<IdeasPage />} />
-          <Route path="singlechat" element={<SingleChat />} />
+          <Route path="/singlechat" element={<SingleChat />} />
         </Routes>
       </BrowserRouter>
     </div>

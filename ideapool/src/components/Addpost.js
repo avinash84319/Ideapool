@@ -11,7 +11,7 @@ function Addpost() {
 
     return <><div className='addpost-div'>
         <div className='addpost-image'>
-            <img src='https://via.placeholder.com/150' className='message-image' alt='user' />
+            <img src='https://via.placeholder.com/150' className='addpost-image' alt='user' />
         </div>
         <div className='addpost'>
             <div onClick={() => { setAddindex(1) }} className='addpost-title'>Idea to share</div>
@@ -29,3 +29,4 @@ function Addpost() {
 
 
 export default Addpost
+
