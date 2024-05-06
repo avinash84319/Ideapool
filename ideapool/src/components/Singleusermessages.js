@@ -1,10 +1,10 @@
 const React = require('react');
 
-const Singleusermessages = ({ selectedUser,message,setMessage,messages,sendMessage}) => {
+const Singleusermessages = ({ selectedUser,message,setMessage,messages,sendMessage,setMscreen}) => {
 
     const Messagestext = (prop) => {
         return prop.messages.map((mess) => {
-            if (mess.side === 1) {
+            if (mess.username === window.sessionStorage.getItem('username')) {
                 return <div className='message-text-right' key={mess.text}><div className='message-text-con'>{mess.text}</div></div>
             }
             else {
@@ -17,7 +17,7 @@ const Singleusermessages = ({ selectedUser,message,setMessage,messages,sendMessa
         <div className="messages-div">
             <div className='messages-nav'>
                 <div className='messages-nav-back'>
-                    <button>🔙</button>
+                    <button onClick={()=>{setMscreen(true)}}>🔙</button>
                 </div>
             </div>
             <div className="messages-list">

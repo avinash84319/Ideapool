@@ -24,17 +24,21 @@ const io = socketio(server, {
 
 io.on('connect', (socket) => {
 
+    let user = {};
+
     socket.on('join', ({ name, room }, callback) => {
         console.log(name, room);
-        const user = { id: socket.id, name, room };
+        user = { id: socket.id, name, room };
+        socket.join(user.room);
         console.log(user);
         callback();
     });
 
-    socket.on('sendMessage', (message,room, callback) => {
-        console.log(message);
-        console.log(room);
-        socket.broadcast.to(room).emit('message', message);
+    socket.on('sendMessage', (message, room, callback) => {
+        console.log('message', message);
+        console.log('room', room);
+        // send to socket in the same id
+        io.to(user.room).emit('message', message);
         callback();
     });
 

@@ -15,6 +15,7 @@ function Home() {
     const [posts, setPosts] = React.useState([]);
     const [name, setName] = React.useState('');
     const [room, setRoom] = React.useState('');
+    const [friends, setFriends] = React.useState([]);
 
     useEffect(() => {
         console.log("getting posts")
@@ -28,21 +29,18 @@ function Home() {
     }, [])
 
     useEffect(() => {
-        const name = window.sessionStorage.getItem('username');
-        const room = "1234"
+        console.log("getting friends")
+        axios.post("http://localhost:5000/api/getfriends",{username:window.sessionStorage.getItem('username')})
+            .then((response) => {
+                setFriends(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }, [])
 
-        setRoom(room);
-        setName(name);
 
-        console.log(name, room);
-
-        socket.emit('join', { name, room }, (error) => {
-        if(error) { 
-            console.log(error);
-        }
-        });
-
-    }, []); 
+    
 
     return (
         <div>
@@ -56,7 +54,7 @@ function Home() {
                     <PostList posts={posts} />
                 </div>
                 <div className="home-message">
-                    <Messages socket={socket} room={room} name={name}/>
+                    <Messages socket={socket} room={room} name={name} setName={setName} setRoom={setRoom} friends={friends} />
                 </div>
             </div>
 
