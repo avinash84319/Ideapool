@@ -1,0 +1,16 @@
+.profile-actions{ 
+    padding: 10px; 
+    border-radius: 5px; 
+    background-color: white; 
+}
+
+
+.profile-actions-buttons{ 
+    margin: 5px; 
+    padding: 15px; 
+    border-radius: 5px; 
+    background-color: #f0f0f0; 
+    color: black; 
+    border: none; 
+    cursor: pointer; 
+}
