@@ -12,6 +12,7 @@ const PostList = (prop) => {
                 console.log(res);
                 window.alert("post added to favs")
             }).catch((err) => {
+                console.log(err.response.data);
                 alert(err.response.data);
             });
 
