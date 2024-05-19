@@ -9,6 +9,7 @@ const { addmessage } = require('../controllers/addmessage');
 const { getmessages } = require('../controllers/getmessages')
 const { addrecmessage } =require('../controllers/addrecmessage')
 const { getfriends } = require('../controllers/getfriends');
+const { changepic } = require('../controllers/changepic');
 
 const router = require('express').Router();
 
@@ -23,6 +24,7 @@ router.route('/addmessage').post(addmessage)
 router.route('/getmessages').post(getmessages)
 router.route('/addrecmessage').post(addrecmessage)
 router.route('/getfriends').post(getfriends)
+router.route('/changepic').post(changepic)
 
 
 module.exports = router;

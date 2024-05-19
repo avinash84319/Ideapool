@@ -6,6 +6,7 @@ import Home from './screens/Home';
 import Profile from './screens/Profile';
 import IdeasPage from './screens/IdeasPage';
 import SingleChat from './components/SingleChat';
+import Contact from './screens/Contact';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/ideas" element={<IdeasPage />} />
           <Route path="/singlechat" element={<SingleChat />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -15,8 +15,7 @@ function Navbar() {
             <li><Link to="/home">Home</Link></li>
             <li><Link to="/profile">Profile</Link></li>
             <li><Link to="/ideas">Ideas</Link></li>
-            <li><Link to="/home">Contact</Link></li>
-            <li><Link to="/home">Feedback</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
          </div>
          <div className="search-icon">
             <span className="fas fa-search"></span>
