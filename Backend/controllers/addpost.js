@@ -4,17 +4,17 @@ const addpost = async(req,res)=>{
 
     console.log("Adding a post");
     
-    const { username, addidea } = req.body;
+    const { username, addidea ,image,account_image } = req.body;
 
     try {
         const newpost = {
             account_username: username,
-            account_image: "https://via.placeholder.com/150",
+            account_image: account_image,
             idea_time: new Date().toISOString(),
             idea_title: addidea.title,
             idea_abstract: addidea.description,
             idea_intrests: JSON.stringify(addidea.tags),
-            idea_image: "https://via.placeholder.com/150",
+            idea_image:image,
             idea_likes: 0,
             idea_comments: 0
         }

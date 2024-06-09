@@ -21,6 +21,21 @@ function Login() {
       alert(err.response.data);
     }
     );
+
+    // getting the user image
+
+    axios.post('http://localhost:5000/api/getimage', {
+
+      username: window.sessionStorage.getItem("username")
+    }).then((res) => {
+      console.log(res);
+      window.sessionStorage.setItem("image", res.data);
+    }
+    ).catch((err) => {
+      alert(err.response.data);
+    }
+    );
+    
   }
 
   return (

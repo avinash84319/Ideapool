@@ -21,7 +21,7 @@ function IdeasPage() {
 
         console.log("useeffect")
         axios.post("http://localhost:5000/api/getfavposts",{
-            "username":"avinash"
+            "username":window.sessionStorage.getItem("username")
         })
             .then((response) => {
                 setIdeas(response.data);

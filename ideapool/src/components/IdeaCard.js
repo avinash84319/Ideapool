@@ -7,7 +7,7 @@ function IdeaCard(props){
     return (
         <div className='idea' onClick={()=>{f(index)}} >
             <div className='idea-image'>
-            <img src={idea.idea_image} alt='Idea' />
+            <img style={{"height":"100px"}} src={idea.idea_image} alt='Idea' />
             </div>
             <div className='idea-header'>
             <h2>{idea.idea_title}</h2>

@@ -7,11 +7,10 @@ function Personal(){
                 <img src='https://via.placeholder.com/150' className='profile-cover' alt='cover' />
             </div>
             <div className='profile-image'>
-                <img src='https://via.placeholder.com/150' className='profile-image-img' alt='user' />
+                <img src={window.sessionStorage.getItem("image")} className='profile-image-img' alt='user' />
             </div>
             <div className='profile-info'>
-                <div className='profile-name'>Avinash Reddy C</div>
-                <div className='profile-email'>avihanvaisri@gmail.com</div>
+                <div className='profile-name'>{window.sessionStorage.getItem("username")}</div>
             </div>
         </div>
     )
